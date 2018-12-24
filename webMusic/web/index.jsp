@@ -11,7 +11,14 @@
     <title>测试页面</title>
   </head>
   <body>
-  欢迎来到网易云音乐web版
-  This is a test page!
+  <a href="#" target="_blank">
+     <div>首&nbsp;页</div>
+  </a>
+  <a href="#" target="_blank">
+      <div>登&nbsp;录</div>
+  </a>
+  <a href="#" target="_blank">
+      <div>注&nbsp;册</div>
+  </a>
   </body>
 </html>
