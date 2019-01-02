@@ -1,0 +1,168 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+/*top*/
+.top-div-fixed{
+    width: 100%;
+    height: 94px;
+    margin: 0;
+    top: 0;
+    z-index: 1;
+    position: fixed;
+}
+/*顶部标题*/
+.top-div{
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    background-color: #C20C0C;
+}
+.top-div-title{
+    color: white;
+    font-size: 20px;
+    margin-left: 10%;
+}
+/*顶部列表*/
+.nav-div{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+.nav-div-list{
+    width: 50%;
+    height: 40px;
+    float: left;
+    /*color: white;*/
+    color: #C20C0C;
+    text-align: center;
+    background-color: white;
+    box-sizing:border-box;
+    /*border-bottom: 0.1px solid lightgray;*/
+    border-bottom: 1px solid #C20C0C;
+}
+/*推荐歌单*/
+.intro-div{
+    width: 100%;
+    height: 400px;
+    margin-top: 94px;
+}
+/*推荐标题*/
+.intro-div-title{
+    width: 100%;
+    height: 50px;
+    color: black;
+    line-height: 50px;
+    box-sizing:border-box;
+    padding-left: 3%;
+    background-color: white;
+}
+/*推荐列表*/
+.intro-div-list{
+    width:100%;
+    height:350px;
+}
+.intro-div-list-out{
+    width:100%;
+    height: 170px;
+    box-sizing:border-box;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.intro-div-list-item{
+    width: 33%;
+    height: 170px;
+    float: left;
+    box-sizing:border-box;
+}
+.intro-div-list-item-mid{
+    margin-left: 0.4%;
+}
+.intro-div-list-item-last{
+    float: right;
+}
+/*推荐列表-单个*/
+/*图片*/
+.intro-div-list-item-img{
+    width: 100%;
+    height: 120px;
+    position: relative;
+}
+.intro-div-list-item-img img{
+    width: 100%;
+    height: 100%;
+}
+.intro-div-list-item-title{
+    width: 100%;
+    height: 50px;
+    color: black;
+    font-size: 13px;
+    background-color: white;
+    position: relative;
+}
+.intro-div-list-item-num{
+    width: 40%;
+    top: 3px;
+    left: 55%;
+    font-size: 12px;
+    color: white;
+    position: absolute;
+}
+/*新歌列表*/
+.new-div{
+    width: 100%;
+    height: auto;
+    box-sizing:border-box;
+}
+.new-div-list{
+    width: 100%;
+    height: 60px;
+    box-sizing:border-box;
+    border-bottom: 0.1px solid lightgrey;
+    background-color: white;
+}
+/*左侧歌曲信息*/
+.new-div-list-item-left{
+    height: 60px;
+    width: 80%;
+    float: left;
+    box-sizing:border-box;
+}
+.new-div-list-item-title{
+    width: 100%;
+    height: 35px;
+    color: black;
+    font-size: 16px;
+    line-height: 35px;
+    box-sizing:border-box;
+    padding-left: 5%;
+}
+.new-div-list-item-album{
+    width: 100%;
+    height: 25px;
+    color: grey;
+    font-size: 12px;
+    line-height: 25px;
+    padding-left: 5%;
+    box-sizing:border-box;
+}
+/*右侧播放图标*/
+.new-div-list-item-right{
+    height: 60px;
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+.new-div-list-item-right img{
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+}
+/*底部div*/
+.bottom-div{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}
