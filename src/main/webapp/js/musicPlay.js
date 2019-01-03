@@ -66,18 +66,18 @@ $(function () {
 var is_rock = false;
 var rot = 10 - 0;
 var time;
-// var audio = document.getElementById("musicAudio");
+var audio = document.getElementById("musicAudio");
 $(document).on("click", "#play", function () {
     if (is_rock == true) {
         window.clearInterval(time);
         $(this).attr("src", "images/play.png");
-        // audio.pause();
+        audio.pause();
         is_rock = false;
     }
     else {
         time = window.setInterval(begin, 25);
         $(this).attr("src", "images/stop.png");
-        // audio.play();
+        audio.play();
         is_rock = true;
     }
 });
