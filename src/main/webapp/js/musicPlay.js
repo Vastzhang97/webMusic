@@ -41,7 +41,7 @@ $(function () {
     //获取歌曲评论
     $.ajax({
         type: "POST",
-        url: "/getMusicComment",
+        url: "/getMusicCommentByMid",
         contentType: "application/json",
         data: JSON.stringify({
             "mid": mid

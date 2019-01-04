@@ -102,6 +102,7 @@ body{
 /*推荐列表-单个*/
 /*图片*/
 .intro-div-list-item-img{
+    cursor: pointer;
     width: 100%;
     height: 120px;
     position: relative;
@@ -133,6 +134,7 @@ body{
     box-sizing:border-box;
 }
 .new-div-list{
+    cursor: pointer;
     width: 100%;
     height: 60px;
     box-sizing:border-box;
