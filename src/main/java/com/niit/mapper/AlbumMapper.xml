@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.niit.mapper.AlbumMapper">
+    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
+    <resultMap id="AlbumMapper" type="com.niit.entity.IntroAlbum">
+        <id column="aId" property="aId" jdbcType="INTEGER" />
+        <result column="aImgSrc" property="aImgSrc" jdbcType="CHAR" />
+        <result column="aTitle" property="aTitle" jdbcType="CHAR" />
+        <result column="aPlayNum" property="aPlayNum" jdbcType="INTEGER" />
+    </resultMap>
+    <select id="getIntroAlbum" resultMap="AlbumMapper">
+        SELECT * FROM album
+    </select>
+    <!-- 查询单条记录
+    <select id="selectUserById" parameterType="int" resultMap="UserDao">
+        SELECT * FROM t_user WHERE USER_ID = #{userId}
+    </select>-->
+</mapper>

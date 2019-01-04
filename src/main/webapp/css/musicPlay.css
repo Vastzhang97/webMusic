@@ -10,6 +10,20 @@ div{
     color: black;
     box-sizing:border-box;
 }
+.return-div{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 5px;
+    color: white;
+    cursor: pointer;
+}
+.return-div img{
+    width: 100%;
+    height: 100%;
+}
 /*顶部div*/
 .top-div{
     height: 50px;
@@ -86,6 +100,19 @@ audio{
 /*歌曲信息*/
 .info-div-out{
     height: 120px;
+    position: relative;
+}
+.collect-div{
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+}
+.collect-div img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 .info-div-item{
     height: 50px;
@@ -118,6 +145,34 @@ audio{
     font-size: 18px;
     padding-left: 3%;
     margin-top: 10px;
+}
+/*发布评论*/
+.comment-div-add{
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    line-height: 80px;
+    background-color: #4D0000;
+}
+#comment,#addComment{
+    float: left;
+}
+#comment{
+    height: 30px;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px #C20C0C solid;
+    margin-top: 10px;
+    margin-left: 5%;
+}
+#addComment{
+    height: 33px;
+    width: 20%;
+    border-radius: 5px;
+    border: 1px #C20C0C solid;
+    margin-top: 10px;
+    margin-left: 5%;
+    color: #C20C0C;
 }
 /*单个评论div*/
 .comment-div-item{
@@ -179,6 +234,6 @@ audio{
 }
 /*底部div*/
 .bottom-div{
-    height: 50px;
+    height: 60px;
     float: left;
 }

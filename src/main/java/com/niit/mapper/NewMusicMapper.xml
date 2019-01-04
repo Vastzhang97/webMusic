@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.niit.mapper.NewMusicMapper">
+    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
+    <resultMap id="NewMusicMapper" type="com.niit.entity.newMusic">
+        <id column="mId" property="mId" jdbcType="INTEGER"/>
+        <result column="musicSrc" property="musicSrc" jdbcType="CHAR"/>
+        <result column="mTitle" property="mTitle" jdbcType="CHAR"/>
+        <result column="mAlbum" property="mAlbum" jdbcType="CHAR"/>
+        <result column="mSinger" property="mSinger" jdbcType="CHAR"/>
+        <result column="mLyrics" property="mLyrics" jdbcType="CHAR"/>
+        <result column="mCompose" property="mCompose" jdbcType="CHAR"/>
+    </resultMap>
+    <select id="getNewMusic" resultMap="NewMusicMapper">
+        SELECT * FROM musicinfo
+    </select>
+</mapper>

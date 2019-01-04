@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+div{
+    width: 100%;
+    box-sizing:border-box;
+}
+.top-div{
+    margin-top: 40px;
+    height: 50px;
+    background-color: #C20C0C;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 20px;
+}
+.login-div{
+    height: 40px;
+    margin-top: 20px;
+    line-height: 40px;
+    float: left;
+}
+.login-div span{
+    margin-left: 40px;
+    margin-right: 20px;
+}
+.button-div{
+    margin-top: 20px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+}
+.button-div button{
+    width: 100px;
+    height: 30px;
+    border: 1px #C20C0C solid;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #C20C0C;
+    cursor:pointer;
+}
+.button-div span{
+    margin-left: 20px;
+    font-size: 15px;
+    cursor:pointer;
+}

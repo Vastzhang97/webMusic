@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+div{
+    width: 100%;
+    box-sizing:border-box;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.top-div{
+    height: 50px;
+    background-color: #C20C0C;
+    margin-bottom: 20px;
+}
+.return-div{
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+#search{
+    float: left;
+    height: 24px;
+    width: 60%;
+    border: 1px white solid;
+    border-radius: 5px;
+    margin-top: 13px;
+    margin-left: 5%;
+}
+.search-div{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    float: right;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+/*新歌列表*/
+.new-div{
+    width: 100%;
+    height: auto;
+    box-sizing:border-box;
+}
+.new-div-list{
+    width: 100%;
+    height: 60px;
+    box-sizing:border-box;
+    border-bottom: 0.1px solid lightgrey;
+    background-color: white;
+}
+/*左侧歌曲信息*/
+.new-div-list-item-left{
+    height: 60px;
+    width: 80%;
+    float: left;
+    box-sizing:border-box;
+}
+.new-div-list-item-title{
+    width: 100%;
+    height: 35px;
+    color: black;
+    font-size: 16px;
+    line-height: 35px;
+    box-sizing:border-box;
+    padding-left: 5%;
+}
+.new-div-list-item-album{
+    width: 100%;
+    height: 25px;
+    color: grey;
+    font-size: 12px;
+    line-height: 25px;
+    padding-left: 5%;
+    box-sizing:border-box;
+}
+/*右侧播放图标*/
+.new-div-list-item-right{
+    height: 60px;
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+.new-div-list-item-right img{
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+}

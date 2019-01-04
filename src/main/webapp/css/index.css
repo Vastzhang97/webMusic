@@ -25,6 +25,16 @@ body{
     font-size: 20px;
     margin-left: 10%;
 }
+/*用户*/
+.userHead{
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor:pointer;
+}
 /*顶部列表*/
 .nav-div{
     width: 100%;
@@ -43,6 +53,10 @@ body{
     /*border-bottom: 0.1px solid lightgray;*/
     border-bottom: 1px solid #C20C0C;
 }
+.nav-search img{
+    width: 40px;
+    height: 40px;
+}
 /*推荐歌单*/
 .intro-div{
     width: 100%;
@@ -58,6 +72,7 @@ body{
     box-sizing:border-box;
     padding-left: 3%;
     background-color: white;
+    border-bottom: 0.1px solid lightgrey;
 }
 /*推荐列表*/
 .intro-div-list{
@@ -72,10 +87,11 @@ body{
     margin-bottom: 10px;
 }
 .intro-div-list-item{
-    width: 33%;
+    width: 30%;
     height: 170px;
     float: left;
     box-sizing:border-box;
+    margin-left: 2.5%;
 }
 .intro-div-list-item-mid{
     margin-left: 0.4%;

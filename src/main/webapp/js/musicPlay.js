@@ -22,6 +22,7 @@
 // }];
 var mid = Number(window.localStorage.getItem("id"));
 var music = JSON.parse(window.localStorage.getItem("music"));
+var uName = window.localStorage.getItem("uname");
 console.log(mid);
 console.log(music);
 var musicSrc = music.musicSrc;
@@ -60,6 +61,54 @@ $(function () {
         }
     });
 
+    $("#collect").click(function () {
+        var index = $(this).attr("name");
+        if(index == "1"){
+            $(this).attr("src","images/collect.png");
+            $(this).attr("name","2");
+            alert("收藏成功");
+        }else{
+            $(this).attr("src","images/collect2.png");
+            $(this).attr("name","1");
+            alert("已取消收藏");
+        }
+    });
+
+    $("#addComment").click(function () {
+        var comment = $("#comment").val();
+        if(uName == "" || uName == null ||uName == undefined){
+            alert("请先登录!");
+            window.location.href = '/login';
+        }else {
+            if(comment == "" || comment == null){
+                alert("请输入评论内容!");
+            }else{
+                //发布评论
+                $.ajax({
+                    type: "POST",
+                    url: "/addComment",
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: JSON.stringify({
+                        "cContent": comment,
+                        "cUName":uName,
+                        "cUHeadImg":"images/1.jpg",
+                        "mid":mid
+                    }),
+                    async: true,
+                    cache: false,
+                    success: function (data) {
+                        addMusicComment(data);
+                    },
+                    error: function (json) {
+                        alert("发布评论错误");
+                    }
+                });
+            }
+
+        }
+    });
+
 });
 
 //图片滚动参数
@@ -93,6 +142,7 @@ function begin(time) {
 
 //渲染歌曲评论
 function addMusicComment(comment) {
+    $("#comment").val("");
     for (var index = 0; index < comment.length; index++) {
         console.log(comment[index].cId);
         var cId = comment[index].cId;//评论id

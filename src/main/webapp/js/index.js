@@ -113,6 +113,14 @@ $(document).on("click", ".new-div-list", function () {
     }
     window.location.href = '/musicPlay';
 });
+$(document).on("click", ".userHead", function () {
+    if(window.localStorage.getItem("uname") == null || window.localStorage.getItem("uname") == undefined){
+        window.location.href = '/login';
+    }else{
+        window.location.href = '/userInfo';
+    }
+
+});
 
 //渲染推荐歌单
 function addIntroAlbum(album) {

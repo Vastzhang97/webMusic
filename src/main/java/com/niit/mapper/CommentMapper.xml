@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.niit.mapper.CommentMapper">
+    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
+    <resultMap id="AlbumMapper" type="com.niit.entity.Comment">
+        <id column="cId" property="cId" jdbcType="INTEGER" />
+        <result column="cUName" property="cUName" jdbcType="CHAR" />
+        <result column="cDate" property="cDate" jdbcType="CHAR" />
+        <result column="cUHeadImg" property="cUHeadImg" jdbcType="INTEGER" />
+        <result column="cReplyId" property="cReplyId" jdbcType="INTEGER" />
+        <result column="mid" property="mid" jdbcType="INTEGER" />
+    </resultMap>
+    <!--查询单条记录-->
+    <select id="getComment" parameterType="int" resultMap="AlbumMapper">
+        SELECT * FROM comment WHERE mId = #{mId}
+    </select>
+</mapper>
