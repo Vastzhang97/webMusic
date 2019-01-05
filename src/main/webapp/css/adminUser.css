@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+div{
+    width: 100%;
+    color: black;
+    box-sizing:border-box;
+}
+.top-div{
+    height: 40px;
+    margin-top: 10px;
+    border-bottom: 0.2px gray solid;
+}
+.top-div div,.item-div div{
+    float: left;
+    height: 40px;
+    margin-left: 2%;
+    font-size: 13px;
+    line-height: 40px;
+    text-align: left;
+}
+.uId-div{
+    width: 20%;
+}
+.uname-div{
+    width: 30%;
+}
+.status-div{
+    width: 20%;
+}
+.button-div{
+    width: 20%;
+}
+.item-div{
+    height: 40px;
+    border-bottom: 0.1px lightgray solid;
+    margin-bottom: 10px;
+    line-height: 40px;
+}
+.item-div div{
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    overflow: hidden;
+}
+.top-div button{
+    width: 20px;
+    height: 10px;
+}
