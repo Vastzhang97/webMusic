@@ -55,6 +55,11 @@
 //     "mTitle": "第一个",
 //     "mAlbum": "ad"
 // }];
+new_element=document.createElement("script");
+new_element.setAttribute("type","text/javascript");
+new_element.setAttribute("src","js/alert.js");// 在这里引入了alert.js
+document.body.appendChild(new_element);
+
 var newMusic = [];
 //初始化
 $(function () {
@@ -76,7 +81,7 @@ $(function () {
 
         },
         error: function (json) {
-            alert("获得推荐歌单错误");
+            newAlert("获得推荐歌单错误");
         }
     });
 
@@ -96,7 +101,7 @@ $(function () {
 
         },
         error: function (json) {
-            alert("获得最新歌曲错误");
+            newAlert("获得最新歌曲错误");
         }
     });
 });

@@ -1,3 +1,8 @@
+new_element=document.createElement("script");
+new_element.setAttribute("type","text/javascript");
+new_element.setAttribute("src","js/alert.js");// 在这里引入了alert.js
+document.body.appendChild(new_element);
+
 $(function () {
     var uname = window.localStorage.getItem("uname");
     var password = window.localStorage.getItem("password");
@@ -6,12 +11,11 @@ $(function () {
     $("#password").val(password);
 
     $("#update").click(function () {
-        alert("aaa");
         var uname = $("#uname").val();
         var password = $("#password").val();
         window.localStorage.setItem("uname", uname);
         window.localStorage.setItem("password", password);
-        alert("修改成功");
+        newAlert("修改成功");
     });
 
     // //获取最新歌曲
@@ -30,7 +34,7 @@ $(function () {
 
         },
         error: function (json) {
-            alert("获得最新歌曲错误");
+            newAlert("获得最新歌曲错误");
         }
     });
 

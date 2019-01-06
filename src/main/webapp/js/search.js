@@ -1,3 +1,8 @@
+new_element=document.createElement("script");
+new_element.setAttribute("type","text/javascript");
+new_element.setAttribute("src","js/alert.js");// 在这里引入了alert.js
+document.body.appendChild(new_element);
+
 var newMusic = [];
 $(function () {
     $(".search-div").click(function () {
@@ -26,7 +31,7 @@ $(function () {
 
                 },
                 error: function (json) {
-                    alert("获取搜索歌单错误");
+                    newAlert("获取搜索歌单错误");
                 }
             });
         }

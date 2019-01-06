@@ -1,3 +1,7 @@
+new_element=document.createElement("script");
+new_element.setAttribute("type","text/javascript");
+new_element.setAttribute("src","js/alert.js");// 在这里引入了alert.js
+document.body.appendChild(new_element);
 $(function () {
     //获取用户信息
     $.ajax({
@@ -15,13 +19,31 @@ $(function () {
 
         },
         error: function (json) {
-            alert("获得用户信息错误");
+            newAlert("获得用户信息错误");
         }
     });
 });
 $(document).on("click", "#delete", function () {
-    var uId = Number($(this).parent(".item-div").find(".uId-div").html());
-    alert(uId);
+    var uId = Number($(this).parents(".item-div").find(".uId-div").html());
+    //删除用户
+    $.ajax({
+        type: "POST",
+        url: "/deleteUser",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({
+            "uId":uId
+        }),
+        async: true,
+        cache: false,
+        success: function (data) {
+            newAlert("用户删除成功!");
+            window.location.href = '/adminUser';
+        },
+        error: function (json) {
+            newAlert("删除用户错误");
+        }
+    });
 });
 
 function addUser(user) {

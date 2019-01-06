@@ -1,3 +1,7 @@
+new_element=document.createElement("script");
+new_element.setAttribute("type","text/javascript");
+new_element.setAttribute("src","js/alert.js");// 在这里引入了alert.js
+document.body.appendChild(new_element);
 $(function () {
     //获取音乐信息
     $.ajax({
@@ -15,12 +19,31 @@ $(function () {
 
         },
         error: function (json) {
-            alert("获得音乐信息错误");
+            newAlert("获得音乐信息错误");
         }
     });
 });
 $(document).on("click", "#delete", function () {
-    var mId = Number($(this).parent(".item-div").find(".uId-div").html());
+    var mId = Number($(this).parents(".item-div").find(".mId-div").html());
+    //删除音乐
+    $.ajax({
+        type: "POST",
+        url: "/deleteNewMusic",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({
+            "mid":mId
+        }),
+        async: true,
+        cache: false,
+        success: function (data) {
+            newAlert("删除音乐成功!")
+            window.location.href = '/adminMusic';
+        },
+        error: function (json) {
+            newAlert("删除音乐错误");
+        }
+    });
 });
 
 function addMusic(music) {

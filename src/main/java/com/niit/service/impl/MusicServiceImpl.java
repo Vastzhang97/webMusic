@@ -1,5 +1,6 @@
 package com.niit.service.impl;
 
+import com.niit.entity.Comment;
 import com.niit.mapper.AlbumMapper;
 import com.niit.mapper.CommentMapper;
 import com.niit.mapper.NewMusicMapper;
@@ -18,9 +19,6 @@ public class MusicServiceImpl implements IMusicService {
     private NewMusicMapper newMusicMapper;
 
     @Autowired
-    private CommentMapper commentMapper;
-
-    @Autowired
     private JSONUtil jsonUtil;
 
     @Override
@@ -34,7 +32,14 @@ public class MusicServiceImpl implements IMusicService {
     }
 
     @Override
-    public String getComment(int mid) {
-        return jsonUtil.toJSon(commentMapper.getComment(mid));
+    public String getSearchMusic(String search) {
+        return jsonUtil.toJSon(newMusicMapper.getSearchMusic(search));
     }
+
+    @Override
+    public int deleteNewMusic(int mid) {
+        return newMusicMapper.deleteNewMusic(mid);
+    }
+
+
 }

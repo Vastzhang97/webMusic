@@ -20,6 +20,11 @@
 //     "cUHeadImg": "images/1.jpg",
 //     "cReplyId": 1
 // }];
+new_element=document.createElement("script");
+new_element.setAttribute("type","text/javascript");
+new_element.setAttribute("src","js/alert.js");// 在这里引入了alert.js
+document.body.appendChild(new_element);
+
 var mid = Number(window.localStorage.getItem("id"));
 var music = JSON.parse(window.localStorage.getItem("music"));
 var uName = window.localStorage.getItem("uname");
@@ -57,7 +62,7 @@ $(function () {
 
         },
         error: function (json) {
-            alert("获得歌曲评论错误");
+            newAlert("获得歌曲评论错误");
         }
     });
 
@@ -66,22 +71,22 @@ $(function () {
         if(index == "1"){
             $(this).attr("src","images/collect.png");
             $(this).attr("name","2");
-            alert("收藏成功");
+            newAlert("收藏成功");
         }else{
             $(this).attr("src","images/collect2.png");
             $(this).attr("name","1");
-            alert("已取消收藏");
+            newAlert("已取消收藏");
         }
     });
 
     $("#addComment").click(function () {
         var comment = $("#comment").val();
         if(uName == "" || uName == null ||uName == undefined){
-            alert("请先登录!");
+            newAlert("请先登录!");
             window.location.href = '/login';
         }else {
             if(comment == "" || comment == null){
-                alert("请输入评论内容!");
+                newAlert("请输入评论内容!");
             }else{
                 //发布评论
                 $.ajax({
@@ -101,7 +106,7 @@ $(function () {
                         addMusicComment(data);
                     },
                     error: function (json) {
-                        alert("发布评论错误");
+                        newAlert("发布评论错误");
                     }
                 });
             }
