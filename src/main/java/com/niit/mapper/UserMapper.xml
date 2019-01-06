@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.niit.mapper.UserMapper">
+    <resultMap id="UserMapper" type="com.niit.entity.User">
+        <id column="uId" property="uId" jdbcType="INTEGER"/>
+        <result column="uName" property="uName" jdbcType="CHAR"/>
+        <result column="password" property="password" jdbcType="CHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="headImg" property="headImg" jdbcType="CHAR"/>
+    </resultMap>
+    <select id="getUser" resultMap="UserMapper">
+        SELECT * FROM user
+    </select>
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from user where uId = #{uId}
+    </delete>
+</mapper>

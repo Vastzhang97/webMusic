@@ -6,5 +6,7 @@ import com.niit.entity.Comment;
 import java.util.List;
 
 public interface CommentMapper {
-    List<Comment> getComment(int mid);
+    List<Comment> getMusicCommentByMid(int mid);
+    List<Comment> getMusicCommentByCid(int cid);
+    int addComment(Comment comment);
 }

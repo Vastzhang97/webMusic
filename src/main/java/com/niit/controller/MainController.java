@@ -1,5 +1,6 @@
 package com.niit.controller;
 
+import com.niit.entity.Comment;
 import com.niit.service.interfaces.IMusicService;
 import com.niit.util.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @Controller
@@ -32,40 +35,40 @@ public class MainController {
         return "musicPlay";
     }
 
+    @RequestMapping("/search")
+    public String search() {
+        return "search";
+    }
+
+    @RequestMapping("/userInfo")
+    public String userInfo() {
+        return "userInfo";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
+
+    @RequestMapping("/adminMusic")
+    public String adminMusic() {
+        return "adminMusic";
+    }
+
+    @RequestMapping("/adminUser")
+    public String adminUser() {
+        return "adminUser";
+    }
+
     @Autowired
     private IMusicService musicService;
 
     @Autowired
     private JSONUtil jsonUtil;
 
-    @RequestMapping(value = "/getIntroAlbum", produces = "plain/text; charset=UTF-8")
-    @ResponseBody
-    public String getIntroAlbum(@RequestParam(required = false) Integer userId, HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("getIntroAlbum");
-        String introAlbums = musicService.getIntroAlbum();
-        return introAlbums;
-    }
-
-    @RequestMapping(value = "/getNewMusic", produces = "plain/text; charset=UTF-8")
-    @ResponseBody
-    public String getNewMusic(@RequestParam(required = false) Integer userId, HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("getNewMusic");
-        String newMusic = musicService.getNewMusic();
-        System.out.println(newMusic);
-        return newMusic;
-    }
-
-    @RequestMapping(value = "/getMusicComment", produces = "plain/text; charset=UTF-8")
-    @ResponseBody
-    public String getMusicComment(@RequestBody String json, HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("getMusicComment" + json);
-        Map<String, Object> map = jsonUtil.readValue(json, Map.class);
-        int mid = 0;
-        for (Map.Entry<String, Object> entry : map.entrySet()) {
-            mid = (Integer) entry.getValue();
-        }
-        System.out.println("getMusicComment" + mid);
-        String comment = musicService.getComment(mid);
-        return comment;
-    }
 }

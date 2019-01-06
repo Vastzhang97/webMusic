@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface NewMusicMapper {
     List<newMusic> getNewMusic();
+    List<newMusic> getSearchMusic(String search);
+    int deleteNewMusic(int mid);
 }

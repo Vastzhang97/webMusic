@@ -7,12 +7,22 @@
         <id column="cId" property="cId" jdbcType="INTEGER" />
         <result column="cUName" property="cUName" jdbcType="CHAR" />
         <result column="cDate" property="cDate" jdbcType="CHAR" />
+        <result column="cContent" property="cContent" jdbcType="CHAR" />
         <result column="cUHeadImg" property="cUHeadImg" jdbcType="INTEGER" />
         <result column="cReplyId" property="cReplyId" jdbcType="INTEGER" />
         <result column="mid" property="mid" jdbcType="INTEGER" />
     </resultMap>
     <!--查询单条记录-->
-    <select id="getComment" parameterType="int" resultMap="AlbumMapper">
+    <select id="getMusicCommentByMid" parameterType="int" resultMap="AlbumMapper">
         SELECT * FROM comment WHERE mId = #{mId}
     </select>
+    <select id="getMusicCommentByCid" parameterType="int" resultMap="AlbumMapper">
+        SELECT * FROM comment WHERE cId = #{cId}
+    </select>
+    <insert id="addComment" parameterType="com.niit.entity.Comment">
+        <selectKey keyProperty="cId" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into comment(cUName,cContent,cDate,cUHeadImg,cReplyId,mid) values(#{cUName},#{cContent},#{cDate},#{cUHeadImg},#{cReplyId},#{mid})
+    </insert>
 </mapper>

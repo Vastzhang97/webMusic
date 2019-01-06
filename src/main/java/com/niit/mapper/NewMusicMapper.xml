@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.niit.mapper.NewMusicMapper">
-    <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
     <resultMap id="NewMusicMapper" type="com.niit.entity.newMusic">
         <id column="mId" property="mId" jdbcType="INTEGER"/>
         <result column="musicSrc" property="musicSrc" jdbcType="CHAR"/>
@@ -13,6 +12,12 @@
         <result column="mCompose" property="mCompose" jdbcType="CHAR"/>
     </resultMap>
     <select id="getNewMusic" resultMap="NewMusicMapper">
-        SELECT * FROM musicinfo
+        SELECT * FROM musicinfo limit 10
     </select>
+    <select id="getSearchMusic" parameterType="String" resultMap="NewMusicMapper">
+        SELECT * FROM musicinfo where mTitle LIKE CONCAT('%',#{search},'%')
+    </select>
+    <delete id="deleteNewMusic" parameterType="java.lang.Integer">
+        delete from musicinfo where mId = #{mid}
+    </delete>
 </mapper>

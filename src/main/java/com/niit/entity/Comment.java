@@ -6,7 +6,7 @@ public class Comment {
     private String cContent;
     private String cDate;
     private String cUHeadImg;
-    private String cReplyId;
+    private int cReplyId;
     private int mid;
 
     public int getcId() {
@@ -49,11 +49,11 @@ public class Comment {
         this.cUHeadImg = cUHeadImg;
     }
 
-    public String getcReplyId() {
+    public int getcReplyId() {
         return cReplyId;
     }
 
-    public void setcReplyId(String cReplyId) {
+    public void setcReplyId(int cReplyId) {
         this.cReplyId = cReplyId;
     }
 
