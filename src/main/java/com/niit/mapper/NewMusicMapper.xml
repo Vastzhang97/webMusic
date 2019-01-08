@@ -14,8 +14,11 @@
     <select id="getNewMusic" resultMap="NewMusicMapper">
         SELECT * FROM musicinfo limit 10
     </select>
+    <select id="getAllNewMusic" resultMap="NewMusicMapper">
+        SELECT * FROM musicinfo
+    </select>
     <select id="getSearchMusic" parameterType="String" resultMap="NewMusicMapper">
-        SELECT * FROM musicinfo where mTitle LIKE CONCAT('%',#{search},'%')
+        SELECT * FROM musicinfo where mTitle LIKE CONCAT('%',#{search},'%') or mSinger LIKE CONCAT('%',#{search},'%')
     </select>
     <delete id="deleteNewMusic" parameterType="java.lang.Integer">
         delete from musicinfo where mId = #{mid}
