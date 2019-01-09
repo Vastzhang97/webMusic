@@ -1,5 +1,6 @@
 package com.niit.service.impl;
 
+import com.niit.entity.User;
 import com.niit.mapper.UserMapper;
 import com.niit.service.interfaces.IUserService;
 import com.niit.util.JSONUtil;
@@ -23,5 +24,10 @@ public class UserServiceImpl implements IUserService {
     @Override
     public int deleteUser(int uId) {
         return userMapper.deleteUser(uId);
+    }
+
+    @Override
+    public int register(User user) {
+        return userMapper.register(user);
     }
 }

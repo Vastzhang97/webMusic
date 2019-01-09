@@ -15,4 +15,10 @@
     <delete id="deleteUser" parameterType="java.lang.Integer">
         delete from user where uId = #{uId}
     </delete>
+    <insert id="register" parameterType="com.niit.entity.register">
+        <selectKey keyProperty="uId" resultType="long" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into user(uName,password) values(#{uName},#{password})
+    </insert>
 </mapper>

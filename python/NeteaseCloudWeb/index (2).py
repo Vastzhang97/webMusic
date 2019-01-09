@@ -153,14 +153,14 @@ def run(url):
                            "(NULL, '" + user_name + "', '" + comment + "', '" + comment_date + "', '" + user_head + "', NULL, '" + str(
                         song_id) + "','" + str(
                         like_num) + "');"
-                    #try:
-                    #    cursor.execute(sql3)
-                    #    cursor.execute(sql4)
-                    #    db.commit()
-                    #except Exception as e:
-                    #    db.rollback()
-                    #    logger.warning(e)
-                    #    print(e)
+                    try:
+                        cursor.execute(sql3)
+                        cursor.execute(sql4)
+                        db.commit()
+                    except Exception as e:
+                        db.rollback()
+                        logger.warning(e)
+                        print(e)
                 driver.switch_to.default_content()
                 driver.back()
                 x2 += 1

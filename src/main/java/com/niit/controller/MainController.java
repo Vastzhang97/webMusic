@@ -50,6 +50,11 @@ public class MainController {
         return "login";
     }
 
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
+    }
+
     @RequestMapping("/admin")
     public String admin() {
         return "admin";

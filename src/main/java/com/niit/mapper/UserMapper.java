@@ -10,4 +10,5 @@ import java.util.List;
 public interface UserMapper {
     List<User> getUser();
     int deleteUser(int uId);
+    int register(User user);
 }

@@ -1,5 +1,6 @@
 package com.niit.controller;
 
+import com.niit.entity.User;
 import com.niit.service.interfaces.IUserService;
 import com.niit.util.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,15 @@ public class UserController {
         }
         int result = userService.deleteUser(uId);
         System.out.println("result:" + result);
+        return jsonUtil.toJSon(result);
+    }
+
+    @RequestMapping(value = "/register", produces = "plain/text; charset=UTF-8")
+    @ResponseBody
+    public String register(@RequestBody String json, HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("register" + json);
+        User user = jsonUtil.readValue(json, User.class);
+        int result = userService.register(user);
         return jsonUtil.toJSon(result);
     }
 }
